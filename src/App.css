@@ -1,0 +1,217 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.btn-yes {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-yes:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary);
+}
+
+.btn-no {
+  background-color: white;
+  color: var(--text);
+  border: 2px solid var(--accent);
+}
+
+/* Polaroid Styles */
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.polaroid {
+  background: white;
+  padding: 1rem 1rem 3rem 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: rotate(var(--rotation));
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+.polaroid-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  background-color: #eee;
+}
+
+.polaroid-caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text);
+}
+
+/* Note Styles */
+.love-note {
+  max-width: 500px;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin-top: 4rem;
+  line-height: 1.8;
+}
+
+.love-note::before {
+  content: '❤';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.note-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+/* Quiz Styles */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quiz-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.question-card {
+  text-align: left;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.question-text {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.quiz-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.quiz-polaroid {
+  justify-self: center;
+}
+
+/* Landing Section */
+.landing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quiz-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .question-card {
+    text-align: center;
+    order: 2;
+  }
+
+  .quiz-polaroid {
+    order: 1;
+    transform: scale(0.9);
+  }
+
+  .question-text {
+    font-size: 1.5rem;
+  }
+
+  .quiz-buttons {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .polaroid-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .love-note {
+    padding: 2rem;
+    margin: 2rem 1rem;
+  }
+}
